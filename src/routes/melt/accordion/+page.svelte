@@ -4,23 +4,7 @@
 		AccordionItem,
 		AccordionTrigger,
 		AccordionContent
-	} from '$lib/bits/accordion/index.js';
-
-	const items = [
-		{
-			title: 'What is the meaning of life?',
-			content:
-				'To become a better person, to help others, and to leave the world a better place than you found it.'
-		},
-		{
-			title: 'How do I become a better person?',
-			content: 'Read books, listen to podcasts, and surround yourself with people who inspire you.'
-		},
-		{
-			title: 'What is the best way to help others?',
-			content: 'Give them your time, attention, and love.'
-		}
-	];
+	} from '$lib/melt/accordion/index.js';
 </script>
 
 <main class="container mx-auto space-y-10 text-slate-300">
@@ -35,7 +19,7 @@
 		</section>
 
 		<section class="w-1/2">
-			<Accordion class="p-4 border rounded-md">
+			<Accordion class="p-4 border rounded-md" multiple>
 				<AccordionItem value="item-1">
 					<AccordionTrigger>What is the meaning of life?</AccordionTrigger>
 					<AccordionContent>

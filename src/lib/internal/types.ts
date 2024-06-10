@@ -10,6 +10,8 @@ export type OnChangeFn<T> = (value: T) => void;
 
 export type ValueOf<T> = T[keyof T];
 
+export type ObjectOnly<T> = T extends object ? T : never;
+
 export type ForwardEvents = {
 	['on-click']?: (e: MouseEvent) => void;
 	['on-mouseenter']?: (e: MouseEvent) => void;
