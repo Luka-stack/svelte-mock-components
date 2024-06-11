@@ -7,7 +7,13 @@ type FlyAndScaleOptions = {
 	duration?: number;
 };
 
-export function flyAndScale(node: HTMLElement, options: FlyAndScaleOptions) {
+const defaultOptions = {
+	duration: 150,
+	y: 25,
+	start: 0.9
+};
+
+export function flyAndScale(node: Element, options: FlyAndScaleOptions = defaultOptions) {
 	const style = getComputedStyle(node);
 	const transform = style.transform === 'none' ? '' : style.transform;
 
