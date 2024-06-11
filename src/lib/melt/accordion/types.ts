@@ -1,19 +1,13 @@
-import type { HTMLAttributes, HTMLButtonAttributes } from 'svelte/elements';
+import type { HTMLButtonAttributes } from 'svelte/elements';
 import type {
 	CreateAccordionProps as MeltAccordionProps,
 	AccordionItemProps as MeltAccordionItemProps
 } from '@melt-ui/svelte';
 
-import type { ObjectOnly, OnChangeFn } from '$lib/internal/types.js';
+import type { DOMElement, DivAttributes, ObjectOnly, OnChangeFn } from '$lib/internal/types.js';
 
 type OmitValue<T> = Omit<T, 'value' | 'defaultValue' | 'onValueChange'>;
 type OmitForceVisible<T> = Omit<T, 'forceVisible'>;
-
-type DivAttributes = HTMLAttributes<HTMLDivElement>;
-
-type DOMElement<T extends Element = HTMLDivElement> = {
-	el?: T;
-};
 
 export type AccordionProps<Multiple extends boolean> = OmitValue<
 	OmitForceVisible<MeltAccordionProps<Multiple>>

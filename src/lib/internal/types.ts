@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'svelte/elements';
+
 export type WhenTrue<TrueOrFalse, IfTrue, IfFalse, IfNeither = IfTrue | IfFalse> = [
 	TrueOrFalse
 ] extends [true]
@@ -11,6 +13,12 @@ export type OnChangeFn<T> = (value: T) => void;
 export type ValueOf<T> = T[keyof T];
 
 export type ObjectOnly<T> = T extends object ? T : never;
+
+export type DivAttributes = HTMLAttributes<HTMLDivElement>;
+
+export type DOMElement<T extends Element = HTMLDivElement> = {
+	el?: T;
+};
 
 export type ForwardEvents = {
 	['on-click']?: (e: MouseEvent) => void;
